@@ -3,6 +3,7 @@ on:
     types: [created]
   push:
     branches: ["*"]
+    tags: ["*"]
 
 jobs:
   release:
@@ -20,6 +21,7 @@ jobs:
           args: --path . --root .
       - name: Release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./bin/umaximize.exe
         env:
