@@ -20,7 +20,7 @@ const EXPECTED_POS: Point = Point{x: 0, y: 0};
 fn handler_impl(hwnd: HWND, _lparam: LPARAM) {
     let wnd = Window::new(hwnd);
 
-    if wnd.get_title().unwrap_or_default() != "umamusume" {
+    if wnd.get_title().unwrap_or_default() != "Endfield" {
         return
     }
 
